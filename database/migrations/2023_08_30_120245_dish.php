@@ -13,8 +13,8 @@ return new class extends Migration
     {
         //
         Schema::create('dish', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name');
+            $table->bigIncrements('id_dish');
+            $table->string('name_dish');
             $table->text('description_short');
             $table->text('description_detail');
             $table->string('photo');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('dish');
     }
 };
