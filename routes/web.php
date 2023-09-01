@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DishesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +26,13 @@ Route::get('/cart', function () {
     return view('cartView');
 });
 
+//Rutas del crud dish
+/*
+Route::get('/dish', function () {
+    return view('dish.index');
+});
 
+Route::get('dish/create', [DishController::class, 'create']);
+*/
+
+Route::resource('dishes', DishesController::class); //creamos todas las rutas necesarias del crud
