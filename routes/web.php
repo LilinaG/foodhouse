@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,5 +25,7 @@ Route::get('/detail', function () {
 Route::get('/cart', function () {
     return view('cartView');
 });
+
+Route::get('/admin/categoryIndex', [CategoryController::class, 'index']) ->name('adminViews.categoryIndex');
 
 
