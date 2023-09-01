@@ -36,3 +36,16 @@ Route::get('dish/create', [DishController::class, 'create']);
 */
 
 Route::resource('dishes', DishesController::class); //creamos todas las rutas necesarias del crud
+Route::get('/login', function () {
+    return view('customLogin');
+});
+
+Route::get('/register', function () {
+    return view('customRegister');
+});
+
+
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
