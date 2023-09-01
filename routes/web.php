@@ -26,16 +26,10 @@ Route::get('/cart', function () {
     return view('cartView');
 });
 
-//Rutas del crud dish
-/*
-Route::get('/dish', function () {
-    return view('dish.index');
-});
-
-Route::get('dish/create', [DishController::class, 'create']);
-*/
 
 Route::resource('dishes', DishesController::class); //creamos todas las rutas necesarias del crud
+Route::delete('/dishes/{id_dish}', 'DishesController@destroy');
+
 Route::get('/login', function () {
     return view('customLogin');
 });

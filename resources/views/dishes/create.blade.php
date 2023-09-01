@@ -3,7 +3,7 @@ formulario de creación de "dishes"
 <form action="{{ url('/dishes') }}" method="post" enctype="multipart/form-data">
 @csrf
 
-    <label for="name_dish">Nombre</label>
+    <label for="name_dish">Nombre plato</label>
     <input type="text" name="name_dish" id="name" >
     <br>
 

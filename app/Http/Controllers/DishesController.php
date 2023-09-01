@@ -13,7 +13,9 @@ class DishesController extends Controller
     public function index()
     {
         //
-        return view('dishes.index');
+
+        $data['dishes']=Dishes::paginate(5);
+        return view('dishes.index', $data);
     }
 
     /**
@@ -31,10 +33,10 @@ class DishesController extends Controller
     public function store(Request $request)
     {
         //
-        //$dataDish = $request->all();
+        $dataDish = $request->all();
         $dataDish = $request->except('_token');
-        if ($request->hasFile('Foto')){ 
-            $dataDish['Photo']=$request->file("Photo")->store( ‘uploads’, ‘public’);
+        /*if ($request->hasFile('Foto')){ 
+            $dataDish['Photo']=$request->file("Photo")->store( ‘uploads’, ‘public’);*/
             
 
         Dishes::create($dataDish);
@@ -45,7 +47,7 @@ class DishesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(dishes $dish)
+    public function show(dishes $dishes)
     {
         //
     }
@@ -69,8 +71,10 @@ class DishesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(dishes $dish)
+    public function destroy($id_dish)
     {
         //
+        Dishes::destroy($id_dish);
+        return redirect('dishes');
     }
 }
