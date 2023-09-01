@@ -26,7 +26,7 @@ Route::get('/cart', function () {
 });
 
 Route::get('/login', function () {
-    return view('customLogin');
+    return view('loginView');
 });
 
 Route::get('/register', function () {
