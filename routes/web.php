@@ -25,16 +25,4 @@ Route::get('/cart', function () {
     return view('cartView');
 });
 
-Route::get('/login', function () {
-    return view('customLogin');
-});
 
-Route::get('/register', function () {
-    return view('customRegister');
-});
-
-
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
