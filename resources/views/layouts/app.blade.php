@@ -15,11 +15,12 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('public/css/styles.css') }}">
 </head>
 <body>
     <div id="app">
         
-
+    @include('layout.components.navigation')
                         
 
         <main class="py-4">

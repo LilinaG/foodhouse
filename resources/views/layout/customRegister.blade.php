@@ -1,4 +1,4 @@
-@include('layout.components.navigation')
+
 
 @section('content')
 <div class="container">
