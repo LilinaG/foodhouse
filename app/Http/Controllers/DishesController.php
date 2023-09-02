@@ -41,7 +41,8 @@ class DishesController extends Controller
 
         Dishes::create($dataDish);
 
-         return response()->json($dataDish);
+        //return response()->json($dataDish);
+        return redirect('dishes')->with('message', 'Plato agregado con éxito');
     }
 
     /**
@@ -88,5 +89,6 @@ class DishesController extends Controller
         //
         Dishes::destroy($id);
         return redirect('dishes');
+        return redirect('dishes')->with('message', 'Plato eliminadogit');
     }
 }

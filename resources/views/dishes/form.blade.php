@@ -1,4 +1,5 @@
-formulario que tendrá los datos en común con create y edit
+
+    <h2>{{ $modo }} plato</h2>
     <label for="name_dish">Nombre plato</label>
     <input type="text" name="name_dish" value="{{isset ($dish->name_dish)? $dish->name_dish:'' }}" id="name" >
     <br>
@@ -23,5 +24,6 @@ formulario que tendrá los datos en común con create y edit
     <input type="text" name="allergens" value="{{ isset ($dish->allergens) ? $dish->allergens:'' }}" id="allergens">
     <br>
     
-    <input type="submit" value="Guardar">
+    <input type="submit" value="{{ $modo }}">
     <br>
+    <a href="{{ url('dishes') }}"> Volver </a>

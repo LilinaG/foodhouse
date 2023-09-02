@@ -4,6 +4,6 @@ formulario de edición de los platos
 
 @csrf
 {{ method_field('PATCH') }}
-@include('dishes.form');
+@include('dishes.form', ['modo'=>'editar']);
 
 </form>

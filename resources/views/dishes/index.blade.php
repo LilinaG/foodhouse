@@ -1,6 +1,11 @@
+@if(Session::has('message'));
+
+{{Session::get('message')}};
+
+@endif
 
 
-<a href="{{ url('empleado/create') }}"> Registrar nuevo plato </a>
+<a href="{{ url('dishes/create') }}"> Registrar nuevo plato </a>
 
 <table class="table table-light">
         <thead class="thead-light">
