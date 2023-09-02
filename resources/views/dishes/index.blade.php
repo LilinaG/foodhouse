@@ -18,7 +18,7 @@ mostrar la lista de dish
         <tbody>
             @foreach($dishes as $dish)
             <tr>
-                <td>{{$dish->id_dish}}</td>
+                <td>{{$dish->id}}</td>
                 <td>{{$dish->name_dish}}</td>
                 <td>{{$dish->description_short}}</td>
                 <td>{{$dish->description_detail}}</td>
@@ -26,7 +26,7 @@ mostrar la lista de dish
                 <td>{{$dish->price}}</td>
                 <td>{{$dish->allergens}}</td>
                 <td>Editar | 
-                    <form action="{{ url('/dishes/'.$dish->id_dish) }}" method="post">
+                    <form action="{{ url('/dishes/'.$dish->id) }}" method="post">
                         @csrf
                         {{ method_field ('DELETE') }}
                         <input type="submit" onclick="return confirm ('¿Quieres borrar este plato?') 

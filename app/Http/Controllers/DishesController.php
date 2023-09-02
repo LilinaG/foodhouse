@@ -71,10 +71,10 @@ class DishesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id_dish)
+    public function destroy($id)
     {
         //
-        Dishes::destroy($id_dish);
+        Dishes::destroy($id);
         return redirect('dishes');
     }
 }
