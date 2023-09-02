@@ -1,4 +1,6 @@
-mostrar la lista de dish
+
+
+<a href="{{ url('empleado/create') }}"> Registrar nuevo plato </a>
 
 <table class="table table-light">
         <thead class="thead-light">
@@ -25,11 +27,17 @@ mostrar la lista de dish
                 <td>{{$dish->photo}}</td>
                 <td>{{$dish->price}}</td>
                 <td>{{$dish->allergens}}</td>
-                <td>Editar | 
+                <td>
+
+                <a href="{{ url('/dishes/'.$dish->id.'/edit')}}">
+                    Editar
+                </a>
+
+
                     <form action="{{ url('/dishes/'.$dish->id) }}" method="post">
                         @csrf
                         {{ method_field ('DELETE') }}
-                        <input type="submit" onclick="return confirm ('¿Quieres borrar este plato?') 
+                        <input type="submit" onclick="return confirm ('¿Quieres borrar este plato?')" 
                         value="Eliminar">
                     </form>
 

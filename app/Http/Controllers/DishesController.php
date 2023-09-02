@@ -55,21 +55,33 @@ class DishesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(dishes $dishes)
+    public function edit($id)
     {
-        //
+        $dish = Dishes::findOrFail($id);
+        return view('dishes.edit', compact('dish'));
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, dishes $dish)
+    public function update(Request $request, $id)
     {
         //
+        $dataDish = $request->except(['_token', '_method']);
+        Dishes::where('id', '=', $id)->update($dataDish);
+
+        $dish = Dishes::findOrFail($id);
+        return view('dishes.edit', compact('dish'));
+
     }
 
     /**
      * Remove the specified resource from storage.
+     * @param \App\Models\Dishes $dish
+     * @return \Illuminate\Http\Response
+
+
      */
     public function destroy($id)
     {
