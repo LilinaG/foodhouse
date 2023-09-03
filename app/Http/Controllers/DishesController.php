@@ -14,7 +14,7 @@ class DishesController extends Controller
     {
         //
 
-        $data['dishes']=Dishes::paginate(5);
+        $data['dishes']=Dishes::paginate();
         return view('dishes.index', $data);
     }
 
@@ -48,11 +48,13 @@ class DishesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(dishes $dishes)
+    /*public function show(dishes $dishes)
     {
         //
+        $dish = Dishes::find($id);
+        return view();
     }
-
+*/
     /**
      * Show the form for editing the specified resource.
      */
@@ -68,13 +70,11 @@ class DishesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $dataDish = $request->except(['_token', '_method']);
         Dishes::where('id', '=', $id)->update($dataDish);
 
         $dish = Dishes::findOrFail($id);
         return view('dishes.edit', compact('dish'));
-
     }
 
     /**
@@ -86,9 +86,8 @@ class DishesController extends Controller
      */
     public function destroy($id)
     {
-        //
         Dishes::destroy($id);
         return redirect('dishes');
-        return redirect('dishes')->with('message', 'Plato eliminadogit');
+        return redirect('dishes')->with('message', 'Plato eliminado');
     }
 }

@@ -1,4 +1,9 @@
-formulario de edición de los platos
+@extends('layouts.app')
+
+@section('content')
+
+<div class="container">
+
 
 <form action="{{ url('dishes/'.$dish->id) }}" method="post" enctype="multipart/form-data">
 
@@ -7,3 +12,5 @@ formulario de edición de los platos
 @include('dishes.form', ['modo'=>'editar']);
 
 </form>
+</div>
+@endsection
