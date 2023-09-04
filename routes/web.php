@@ -26,6 +26,11 @@ Route::get('/cart', function () {
     return view('cartView');
 });
 
-Route::get('/admin/categoryIndex', [CategoryController::class, 'index']) ->name('adminViews.categoryIndex');
+Route::get('/admin/category/index', [CategoryController::class, 'index']) ->name('adminViews.categoryIndex');
+Route::get('/admin/category/create', [CategoryController::class, 'create']) ->name('adminViews.categoryCreate');
+Route::post('/admin/category/store', [CategoryController::class, 'store']) ->name('adminViews.categoryStore');
+Route::get('/admin/category/edit/{category}', [CategoryController::class, 'edit']) ->name('adminViews.categoryEdit');
+Route::put('/admin/category/update/{category}', [CategoryController::class, 'update']) ->name('adminViews.categoryUpdate');
+Route::delete('/admin/category/destroy/{category}', [CategoryController::class, 'destroy']) ->name('adminViews.categoryDestroy');
 
 

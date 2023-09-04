@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('order_dishes', function (Blueprint $table) {
             $table->unsignedBigInteger('id_dish');
-            $table->foreign('id_dish')->references('id_dish')->on('dishes');
+            $table->foreign('id_dish')->references('id')->on('dishes');
             $table->unsignedBigInteger('id_order');
-            $table->foreign('id_order')->references('id_order')->on('orders');
+            $table->foreign('id_order')->references('id')->on('orders');
             $table->integer('quantity');
             $table->decimal('cost_dish');
             $table->decimal('cost_total_dish');

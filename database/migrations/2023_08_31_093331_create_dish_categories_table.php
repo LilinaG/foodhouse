@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('dish_categories', function (Blueprint $table) {
             $table->unsignedBigInteger('id_dish');
-            $table->foreign('id_dish')->references('id_dish')->on('dishes');
+            $table->foreign('id_dish')->references('id')->on('dishes');
             $table->unsignedBigInteger('id_category');
-            $table->foreign('id_category')->references('id_category')->on('categories');
+            $table->foreign('id_category')->references('id')->on('categories');
             $table->timestamps();
             
         });

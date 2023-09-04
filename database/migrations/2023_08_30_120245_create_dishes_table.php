@@ -13,7 +13,7 @@ return new class extends Migration
     {
         //
         Schema::create('dishes', function (Blueprint $table) {
-            $table->bigIncrements('id_dish');
+            $table->bigIncrements('id');
             $table->string('name_dish');
             $table->text('description_short');
             $table->text('description_detail');

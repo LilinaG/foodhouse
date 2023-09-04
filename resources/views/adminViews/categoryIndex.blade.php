@@ -7,11 +7,25 @@
 </head>
 <body>
     <h1>Categorias</h1>
-    <ul>
-        @foreach($categories as $category)
-            <li>{{$category -> name_category}}</li>
-        @endforeach
-    </ul>
+    <a href="{{ route('adminViews.categoryCreate')}}">Nueva categoria</a>
+    @if($categories->isEmpty())
+        <p>No hay categorias</p>
+    @else
+        <ul>
+            @foreach($categories as $category)
+                <li>
+                    {{$category -> name_category}}
+                    <a href="{{ route('adminViews.categoryEdit', $category->id) }}"><button>MODIFICAR</button></a>
+                    <form method="POST" action="{{ route('adminViews.categoryDestroy', $category->id) }}">
+                        @csrf
+                        @method('DELETE')
+                        <input type="submit" value="BORRAR">
+                    </form>
+                    
+                </li>
+            @endforeach
+        </ul>
+    @endif
 </body>
 
 </html>
