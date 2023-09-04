@@ -26,6 +26,9 @@ Route::get('/cart', function () {
     return view('cartView');
 });
 
+Route::get('/login', function () {
+    return view('customLogin');
+});
 
 Route::resource('dishes', DishesController::class); //creamos todas las rutas necesarias del crud
 Route::delete('/dishes/{id_dish}', 'DishesController@destroy');
@@ -40,9 +43,7 @@ Route::get('/register', function () {
 
 
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
