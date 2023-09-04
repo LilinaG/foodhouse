@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->bigIncrements('id_user');
+            $table->bigIncrements('id');
             $table->string('name');
-            $table->unsignedBigInteger('id_role');
+            $table->unsignedBigInteger('id_role')->nullable();
             $table->foreign('id_role')->references('id_role')->on('role');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
