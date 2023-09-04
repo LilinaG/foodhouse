@@ -1,4 +1,5 @@
 
+
     <h2>{{ $modo }} plato</h2>
 
     <div class="form-group">
@@ -33,3 +34,5 @@
     
     <input class="btn btn-dark" type="submit" value="Guardar">
     <a class="btn btn-dark" href="{{ url('dishes') }}"> Volver </a>
+
+  
