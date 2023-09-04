@@ -12,34 +12,34 @@ class CategoryController extends Controller
 {
     public function index(): View {
         $categories=Category::all();
-        return view('adminViews.categoryIndex', compact('categories'));
+        return view('categories.index', compact('categories'));
     }
 
     public function create(): View {
-        return view('adminViews.categoryCreate');
+        return view('categories.create');
     }
 
     public function store(CategoryRequest $request): RedirectResponse {
         
         Category::create($request -> all());
-        return redirect()->route('adminViews.categoryIndex');
+        return redirect()->route('categories.index');
     }
 
     public function edit(Category $category): View {
 
-        return view('adminViews.categoryEdit', compact('category'));
+        return view('categories.edit', compact('category'));
     }
 
     public function update(CategoryRequest $request, Category $category): RedirectResponse {
         
         $category -> update($request ->all());
-        return redirect() ->route('adminViews.categoryIndex');
+        return redirect() ->route('categories.index');
     }
 
     public function destroy(Category $category): RedirectResponse {
         
         $category -> delete();
-        return redirect() ->route('adminViews.categoryIndex');
+        return redirect() ->route('categories.index');
 
     }
 }
