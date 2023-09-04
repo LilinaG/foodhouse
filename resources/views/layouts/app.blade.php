@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
@@ -11,17 +12,16 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">     
 
     <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-    <link rel="stylesheet" href="{{ asset('public/css/styles.css') }}">
+     @vite(['resources/js/app.js'])
+     
 </head>
 <body>
     <div id="app">
         
-    @include('layout.components.navigation')
-                        
+    @include('layout.components.navigation')                        
 
         <main class="py-4">
             @yield('content')
