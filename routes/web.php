@@ -36,7 +36,7 @@ Route::delete('/admin/category/destroy/{category}', [CategoryController::class, 
 
 
 Route::resource('dishes', DishesController::class); //creamos todas las rutas necesarias del crud
-Route::delete('/dishes/{id_dish}', 'DishesController@destroy');
+Route::delete('/dishes/{id}', 'DishesController@destroy');
 
 Route::get('/login', function () {
     return view('customLogin');
