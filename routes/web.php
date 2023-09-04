@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DishesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +30,18 @@ Route::get('/login', function () {
     return view('customLogin');
 });
 
+Route::resource('dishes', DishesController::class); //creamos todas las rutas necesarias del crud
+Route::delete('/dishes/{id_dish}', 'DishesController@destroy');
+
+Route::get('/login', function () {
+    return view('customLogin');
+});
+
 Route::get('/register', function () {
     return view('customRegister');
 });
+
+
 
 
 
