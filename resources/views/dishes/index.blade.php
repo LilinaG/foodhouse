@@ -20,6 +20,7 @@
         <tr>
             <th>ID</th>
             <th>Nombre plato</th>
+            <th>Categoría</th>
             <th>Descripción corta</th>
             <th>Descripción detallada</th>
             <th>Imagen plato</th>
@@ -33,6 +34,7 @@
         <tr>
             <td>{{$dish->id}}</td>
             <td>{{$dish->name_dish}}</td>
+            <td>{{$dish->category->name_category}}</td>
             <td>{{$dish->description_short}}</td>
             <td>{{$dish->description_detail}}</td>
             <td>{{$dish->photo}}</td>

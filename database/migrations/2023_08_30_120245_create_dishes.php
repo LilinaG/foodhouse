@@ -14,11 +14,12 @@ return new class extends Migration
         //
         Schema::create('dishes', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('category_id');
             $table->string('name_dish');
             $table->text('description_short');
             $table->text('description_detail');
             $table->string('photo');
-            $table->bigInteger('price');
+            $table->decimal('price', 10, 2);
             $table->text('allergens');
             $table->timestamps();
         });

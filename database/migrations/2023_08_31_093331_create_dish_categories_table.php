@@ -12,10 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('dish_categories', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_dish');
-            $table->foreign('id_dish')->references('id')->on('dishes');
-            $table->unsignedBigInteger('id_category');
-            $table->foreign('id_category')->references('id')->on('categories');
+            $table->unsignedBigInteger('dish_id');
+            $table->unsignedBigInteger('category_id');
             $table->timestamps();
             
         });

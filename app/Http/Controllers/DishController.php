@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\dishes;
+use App\Models\Dish;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
-class DishesController extends Controller
+class DishController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class DishesController extends Controller
     {
         //
 
-        $data['dishes']=Dishes::paginate();
+        $data['dishes']=Dish::paginate();
         return view('dishes.index', $data);
     }
 
@@ -23,8 +24,8 @@ class DishesController extends Controller
      */
     public function create()
     {
-        //
-        return view('dishes.create');
+        $categories = Category::all();
+        return view('dishes.create', compact('categories'));
     }
 
     /**
@@ -39,7 +40,7 @@ class DishesController extends Controller
             $dataDish['Photo']=$request->file("Photo")->store( ‘uploads’, ‘public’);*/
             
 
-        Dishes::create($dataDish);
+        Dish::create($dataDish);
 
         //return response()->json($dataDish);
         return redirect('dishes')->with('message', 'Plato agregado con éxito');
@@ -60,8 +61,9 @@ class DishesController extends Controller
      */
     public function edit($id)
     {
-        $dish = Dishes::findOrFail($id);
-        return view('dishes.edit', compact('dish'));
+        $dish = Dish::findOrFail($id);
+        $categories = Category::all();
+        return view('dishes.edit', compact('dish', 'categories'));
         
     }
 
@@ -71,10 +73,12 @@ class DishesController extends Controller
     public function update(Request $request, $id)
     {
         $dataDish = $request->except(['_token', '_method']);
-        Dishes::where('id', '=', $id)->update($dataDish);
+        Dish::where('id', '=', $id)->update($dataDish);
+        $dish = Dish::findOrFail($id);
 
-        $dish = Dishes::findOrFail($id);
-        return view('dishes.edit', compact('dish'));
+        $categories = Category::all();
+
+        return view('dishes.edit', compact('dish', 'categories'));
     }
 
     /**
@@ -86,7 +90,7 @@ class DishesController extends Controller
      */
     public function destroy($id)
     {
-        Dishes::destroy($id);
+        Dish::destroy($id);
         return redirect('dishes');
         return redirect('dishes')->with('message', 'Plato eliminado');
     }

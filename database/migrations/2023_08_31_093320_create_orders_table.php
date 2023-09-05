@@ -13,12 +13,10 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('order_status_id');
             $table->timestamp('date_order')->nullable();
-            $table->unsignedBigInteger('id_status');
-            $table->foreign('id_status')->references('id')->on('order_status');
-            $table->decimal('cost_total_order');
+            $table->decimal('cost_total_order', 10, 2);
             $table->timestamps();
         });
     }

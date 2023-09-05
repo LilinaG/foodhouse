@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DishesController;
+use App\Http\Controllers\DishController;
 
 
 Route::get('/', function () {
@@ -17,15 +17,8 @@ Route::get('/cart', function () {
     return view('cartView');
 });
 
-// Route::get('/admin/category/index', [CategoryController::class, 'index']) ->name('adminViews.categoryIndex');
-// Route::get('/admin/category/create', [CategoryController::class, 'create']) ->name('adminViews.categoryCreate');
-// Route::post('/admin/category/store', [CategoryController::class, 'store']) ->name('adminViews.categoryStore');
-// Route::get('/admin/category/edit/{category}', [CategoryController::class, 'edit']) ->name('adminViews.categoryEdit');
-// Route::put('/admin/category/update/{category}', [CategoryController::class, 'update']) ->name('adminViews.categoryUpdate');
-// Route::delete('/admin/category/destroy/{category}', [CategoryController::class, 'destroy']) ->name('adminViews.categoryDestroy');
-
 Route::resource('categories', CategoryController::class);
-Route::resource('dishes', DishesController::class); //creamos todas las rutas necesarias del crud
+Route::resource('dishes', DishController::class); //creamos todas las rutas necesarias del crud
 Route::delete('/dishes/{id}', 'DishesController@destroy');
 
 Route::get('/login', function () {
@@ -37,6 +30,6 @@ Route::get('/register', function () {
 });
 
 
-//Auth::routes();
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
