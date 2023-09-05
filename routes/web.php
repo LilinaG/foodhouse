@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DishesController;
+use App\Http\Controllers\OrderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,9 @@ Route::delete('/admin/category/destroy/{category}', [CategoryController::class, 
 
 Route::resource('dishes', DishesController::class); //creamos todas las rutas necesarias del crud
 Route::delete('/dishes/{id}', 'DishesController@destroy');
+
+
+Route::resource('order', OrderController::class); //creamos todas las rutas necesarias del crud
 
 Route::get('/login', function () {
     return view('customLogin');
