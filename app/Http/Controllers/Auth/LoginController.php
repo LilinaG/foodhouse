@@ -37,4 +37,10 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+
+    protected function authenticated($request, $user)
+    {
+        // Personaliza la redirección después de iniciar sesión
+        return redirect('/'); // Cambia 'welcome' por el nombre de la ruta que deseas utilizar
+    }
 }
