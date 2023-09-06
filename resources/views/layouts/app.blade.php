@@ -23,7 +23,7 @@
 <body>
     <div id="app">
         
-    @include('layout.components.navigation')                        
+    @include('templates.components.navigation')                        
 
         <main class="py-4">
             @yield('content')
