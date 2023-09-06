@@ -1,1 +1,1 @@
-@extends('layout.templateDetail')
+@extends('templates.templateDetail')

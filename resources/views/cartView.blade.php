@@ -1,1 +1,1 @@
-@extends('layout.cartTemplate')
+@extends('templates.cartTemplate')

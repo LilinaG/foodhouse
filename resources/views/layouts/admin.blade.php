@@ -22,7 +22,7 @@
 <body>
     <div id="app">
         
-    @include('layout.components.navAdmin')                        
+    @include('templates.components.navAdmin')                        
 
         <main class="py-4">
             @yield('content')
