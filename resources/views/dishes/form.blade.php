@@ -8,6 +8,16 @@
     </div>
 
     <div class="form-group">
+    <label for="name_dish">Categoría</label>
+    <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="category_id" id="category" >
+        <option selected>Categoría</option>
+        @foreach ($categories as $category):
+        <option value="{{$category->id}}">{{$category->name_category}}</option>
+        @endforeach
+    </select>
+    </div>
+
+    <div class="form-group">
     <label for="description_short">Descripción corta</label>
     <input type="text" class="form-control" name="description_short" value="{{ isset($dish->description_short)? $dish->description_short:''}}" id="description_short">
     </div>
@@ -33,6 +43,6 @@
     </div>
     
     <input class="btn btn-dark" type="submit" value="Guardar">
-    <a class="btn btn-dark" href="{{ url('dishes') }}"> Volver </a>
+    <a class="btn btn-dark" href="{{ route('dishes.index') }}"> Volver </a>
 
   

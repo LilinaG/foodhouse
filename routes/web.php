@@ -5,16 +5,6 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DishesController;
 use App\Http\Controllers\OrderController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', function () {
     return view('welcome');
@@ -28,16 +18,9 @@ Route::get('/cart', function () {
     return view('cartView');
 });
 
-Route::get('/admin/category/index', [CategoryController::class, 'index']) ->name('adminViews.categoryIndex');
-Route::get('/admin/category/create', [CategoryController::class, 'create']) ->name('adminViews.categoryCreate');
-Route::post('/admin/category/store', [CategoryController::class, 'store']) ->name('adminViews.categoryStore');
-Route::get('/admin/category/edit/{category}', [CategoryController::class, 'edit']) ->name('adminViews.categoryEdit');
-Route::put('/admin/category/update/{category}', [CategoryController::class, 'update']) ->name('adminViews.categoryUpdate');
-Route::delete('/admin/category/destroy/{category}', [CategoryController::class, 'destroy']) ->name('adminViews.categoryDestroy');
-
-
-Route::resource('admin/dishes', DishesController::class); //creamos todas las rutas necesarias del crud
-Route::delete('/dishes/{id}', 'DishesController@destroy');
+Route::resource('admin/categories', CategoryController::class);
+Route::resource('admin/dishes', DishController::class); //creamos todas las rutas necesarias del crud
+Route::delete('admin/dishes/{id}', 'DishesController@destroy');
 
 
 Route::resource('admin/order', OrderController::class); //creamos todas las rutas necesarias del crud
