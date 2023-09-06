@@ -11,7 +11,7 @@
 @endif
 
 <a href="{{ url('dishes/create') }}" class="btn btn-dark">Nuevo plato</a>
-<a href="{{ route('adminViews.categoryIndex') }}" class="btn btn-dark">Categorías</a>
+<a href="{{ route('categories.index') }}" class="btn btn-dark">Categorías</a>
 <br/>
 <br/>
 
@@ -20,6 +20,7 @@
         <tr>
             <th>ID</th>
             <th>Nombre plato</th>
+            <th>Categoría</th>
             <th>Descripción corta</th>
             <th>Descripción detallada</th>
             <th>Imagen plato</th>
@@ -33,6 +34,7 @@
         <tr>
             <td>{{$dish->id}}</td>
             <td>{{$dish->name_dish}}</td>
+            <td>{{$dish->category->name_category}}</td>
             <td>{{$dish->description_short}}</td>
             <td>{{$dish->description_detail}}</td>
             <td>{{$dish->photo}}</td>
