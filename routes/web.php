@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DishController;
+use App\Http\Controllers\DishesController;
+use App\Http\Controllers\OrderController;
 
 
 Route::get('/', function () {
@@ -20,6 +21,9 @@ Route::get('/cart', function () {
 Route::resource('admin/categories', CategoryController::class);
 Route::resource('admin/dishes', DishController::class); //creamos todas las rutas necesarias del crud
 Route::delete('admin/dishes/{id}', 'DishesController@destroy');
+
+
+Route::resource('admin/order', OrderController::class); //creamos todas las rutas necesarias del crud
 
 Route::get('/login', function () {
     return view('customLogin');
