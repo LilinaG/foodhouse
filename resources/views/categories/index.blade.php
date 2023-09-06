@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -10,9 +10,9 @@
     </div>
 @endif
 
+<h2>Platos</h2>
+<br/>
 <a href="{{ route('categories.create') }}" class="btn btn-dark">Nueva categoría</a>
-<a href="{{ url('/dishes') }}" class="btn btn-dark">Platos</a>
-
 
 <br/>
 <br/>

@@ -185,8 +185,8 @@
                             <ul class="list-unstyled text-muted">
                                 <li><p href="#">Home</p></li>
                                 <li><p href="#">About</p></li>
-                                <li><p><a class="nav-link" href="{{ url('/login')}}">Iniciar Sesión</a></p></li>
                                 <li><p><a class="nav-link" href="{{ url('/register')}}">Registrarse</a></p></li>
+                                <li><p><a class="nav-link" href="{{ url('/admin/dishes')}}">Admin</a></p></li>
                             </ul>
                         </div>
                         <div class="col-lg-2 col-md-6">

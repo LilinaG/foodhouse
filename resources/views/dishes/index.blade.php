@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 
@@ -10,10 +10,13 @@
     </div>
 @endif
 
-<a href="{{ url('dishes/create') }}" class="btn btn-dark">Nuevo plato</a>
-<a href="{{ route('categories.index') }}" class="btn btn-dark">Categorías</a>
+<h2>Platos</h2>
+<br/>
+<a href="{{ route('dishes.create') }}" class="btn btn-dark">Nuevo plato</a>
 <br/>
 <br/>
+
+
 
 <table class="table table-light">
     <thead class="thead-light">
@@ -41,9 +44,9 @@
             <td>{{$dish->price}}</td>
             <td>{{$dish->allergens}}</td>
             <td>
-                <a href="{{ url('/dishes/'.$dish->id.'/edit')}}" class="btn btn-secondary">Editar</a>
+                <a href="{{ url('admin/dishes/'.$dish->id.'/edit')}}" class="btn btn-secondary">Editar</a>
 
-                <form action="{{ url('/dishes/'.$dish->id) }}" class="d-inline" method="post">
+                <form action="{{ url('admin/dishes/'.$dish->id) }}" class="d-inline" method="post">
                     @csrf
                     {{ method_field ('DELETE') }}
                     <button type="submit" class="btn btn-dark" onclick="return confirm('¿Quieres borrar este plato?')">

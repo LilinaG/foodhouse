@@ -39,8 +39,8 @@ class LoginController extends Controller
     }
 
     protected function authenticated($request, $user)
-    {
+    {echo $request;
         // Personaliza la redirección después de iniciar sesión
-        return redirect('/'); // Cambia 'welcome' por el nombre de la ruta que deseas utilizar
+        return redirect('/admin/dishes'); // Cambia 'welcome' por el nombre de la ruta que deseas utilizar
     }
 }
