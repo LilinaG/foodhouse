@@ -12,6 +12,7 @@
 
 <a href="{{ url('dishes/create') }}" class="btn btn-dark">Nuevo plato</a>
 <a href="{{ route('adminViews.categoryIndex') }}" class="btn btn-dark">Categorías</a>
+
 <br/>
 <br/>
 

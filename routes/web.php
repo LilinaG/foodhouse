@@ -36,11 +36,11 @@ Route::put('/admin/category/update/{category}', [CategoryController::class, 'upd
 Route::delete('/admin/category/destroy/{category}', [CategoryController::class, 'destroy']) ->name('adminViews.categoryDestroy');
 
 
-Route::resource('dishes', DishesController::class); //creamos todas las rutas necesarias del crud
+Route::resource('admin/dishes', DishesController::class); //creamos todas las rutas necesarias del crud
 Route::delete('/dishes/{id}', 'DishesController@destroy');
 
 
-Route::resource('order', OrderController::class); //creamos todas las rutas necesarias del crud
+Route::resource('admin/order', OrderController::class); //creamos todas las rutas necesarias del crud
 
 Route::get('/login', function () {
     return view('customLogin');

@@ -1,5 +1,6 @@
-
+    
     <!--se utilizó old() para recuperar los valores anteriores si la validación falla o, en el caso de la edición, se recuperan los valores actuales del pedido.-->
+    <!--
     <h2>{{ $modo }} pedido</h2>
 
     <div class="form-group">
@@ -12,7 +13,8 @@
     <input type="text" class="form-control" name="cost_total_order" value="{{ old('cost_total_order', isset($order) ? $order->cost_total_order : '') }}" id="cost_total_order">
     </div>
     
+    <br>    
     <input class="btn btn-dark" type="submit" value="Guardar">
     <a class="btn btn-dark" href="{{ url('order') }}"> Volver </a>
 
-  
+ -->
