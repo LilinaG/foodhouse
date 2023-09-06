@@ -8,68 +8,43 @@ use Illuminate\Http\Request;
 
 class DishController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+   
     public function index()
     {
-        //
-
         $data['dishes']=Dish::paginate();
         return view('dishes.index', $data);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         $categories = Category::all();
         return view('dishes.create', compact('categories'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+   
     public function store(Request $request)
     {
-        //
         $dataDish = $request->all();
         $dataDish = $request->except('_token');
-        /*if ($request->hasFile('Foto')){ 
-            $dataDish['Photo']=$request->file("Photo")->store( ‘uploads’, ‘public’);*/
-            
-
+       
         Dish::create($dataDish);
 
-        //return response()->json($dataDish);
-        return redirect('dishes')->with('message', 'Plato agregado con éxito');
+        return redirect('admin/dishes')->with('message', 'Plato agregado con éxito');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    /*public function show(dishes $dishes)
-    {
-        //
-        $dish = Dishes::find($id);
-        return view();
-    }
-*/
-    /**
-     * Show the form for editing the specified resource.
-     */
+
     public function edit($id)
     {
         $dish = Dish::findOrFail($id);
         $categories = Category::all();
         return view('dishes.edit', compact('dish', 'categories'));
-        
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+   
     public function update(Request $request, $id)
     {
         $dataDish = $request->except(['_token', '_method']);
@@ -91,7 +66,7 @@ class DishController extends Controller
     public function destroy($id)
     {
         Dish::destroy($id);
-        return redirect('dishes');
-        return redirect('dishes')->with('message', 'Plato eliminado');
+        return redirect('admin/dishes');
+        return redirect('admin/dishes')->with('message', 'Plato eliminado');
     }
 }

@@ -17,9 +17,9 @@ Route::get('/cart', function () {
     return view('cartView');
 });
 
-Route::resource('categories', CategoryController::class);
-Route::resource('dishes', DishController::class); //creamos todas las rutas necesarias del crud
-Route::delete('/dishes/{id}', 'DishesController@destroy');
+Route::resource('admin/categories', CategoryController::class);
+Route::resource('admin/dishes', DishController::class); //creamos todas las rutas necesarias del crud
+Route::delete('admin/dishes/{id}', 'DishesController@destroy');
 
 Route::get('/login', function () {
     return view('customLogin');

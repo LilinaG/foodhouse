@@ -43,6 +43,6 @@
     </div>
     
     <input class="btn btn-dark" type="submit" value="Guardar">
-    <a class="btn btn-dark" href="{{ url('dishes') }}"> Volver </a>
+    <a class="btn btn-dark" href="{{ route('dishes.index') }}"> Volver </a>
 
   
