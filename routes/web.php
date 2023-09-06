@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\DishesController;
+use App\Http\Controllers\DishController;
 use App\Http\Controllers\OrderController;
 
 
