@@ -35,6 +35,12 @@ Route::get('/register', function () {
 });
 
 
+
+
+
+
+Route::get('/', [App\Http\Controllers\ProductController::class,'index']);
+
 Auth::routes();
 Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
