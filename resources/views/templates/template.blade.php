@@ -35,10 +35,15 @@
                         <div class="col-lg-2 col-md-6">
                             <h5 class="text-white mb-3">Sobre Nosotros</h5>
                             <ul class="list-unstyled text-muted">
-                                <li><p href="#">Home</p></li>
-                                <li><p href="#">About</p></li>
+                                <li><p href="#">Home</p></li>                                
                                 <li><p><a class="nav-link" href="{{ url('/register')}}">Registrarse</a></p></li>
-                                <li><p><a class="nav-link" href="{{ url('/admin/dishes')}}">Admin</a></p></li>
+                                <li><p><a class="nav-link" href="{{ url('/admin/dishes')}}">Login</a></p></li>
+                                <li>
+                                    <form action="{{ route('logout') }}" method="POST">
+                                        @csrf
+                                        <button type="submit" class="nav-link" style="border: none; background: none; cursor: pointer;">Cerrar Sesión</button>
+                                        </form>
+                                </li>
                             </ul>
                         </div>
                         <div class="col-lg-2 col-md-6">

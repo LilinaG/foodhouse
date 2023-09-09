@@ -5,6 +5,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DishController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\Auth\LoginController;
 
 
 Route::resource('admin/categories', CategoryController::class);
@@ -24,3 +25,5 @@ Route::get('/', [ProductController::class,'index']);
 Route::get('/detail/{id}', [ProductController::class, 'show']);
 
 Auth::routes();
+Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+
