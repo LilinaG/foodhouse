@@ -8,22 +8,26 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Auth\LoginController;
 
 
+Route::get('/', [ProductController::class,'index']);
+Route::get('/detail/{id}', [ProductController::class, 'show'])->name('detail');
+
 Route::resource('admin/categories', CategoryController::class);
-Route::resource('admin/dishes', DishController::class); //creamos todas las rutas necesarias del crud
+Route::resource('admin/order', OrderController::class);
+Route::resource('admin/dishes', DishController::class);
 Route::delete('admin/dishes/{id}', 'DishesController@destroy');
-Route::resource('admin/order', OrderController::class); //creamos todas las rutas necesarias del crud
+
+
 Route::get('/login', function () {
     return view('customLogin');
 });
 Route::get('/register', function () {
     return view('customRegister');
 });
+
+Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+Auth::routes();
+
 Route::get('/cart', function () {
     return view('cartView');
-});
-Route::get('/', [ProductController::class,'index']);
-Route::get('/detail/{id}', [ProductController::class, 'show']);
-
-Auth::routes();
-Route::post('/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+})->name('cart');
 
