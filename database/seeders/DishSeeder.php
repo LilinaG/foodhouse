@@ -36,7 +36,7 @@ class DishSeeder extends Seeder
             'name_dish' => 'Smoothie de espinacas y plátano',
             'description_short' => 'Con espinacas, plátano, leche de almendra y miel.',
             'description_detail' => '¿Buscas una forma refrescante de comenzar tu mañana? Prueba nuestro Smoothie de Espinacas y Plátano. Con espinacas frescas, plátano maduro, leche de almendra y un toque de miel, este batido es una fuente de energía y nutrientes.',
-            'photo' => 'https://www.google.com/search?sca_esv=563396968&sxsrf=AB5stBjmFF0p7akbFxoZfpv8iqFd2Ulz3g:1694092429192&q=smoothie+de+espinacas+y+platano&tbm=isch&source=lnms&sa=X&ved=2ahUKEwibndWLypiBAxXuTaQEHXe_DKYQ0pQJegQIChAB&biw=1077&bih=935&dpr=2#imgrc=uDOsFsewET7DqM',
+            'photo' => 'https://cdn.pixabay.com/photo/2015/04/19/14/46/smoothie-729923_1280.jpg',
             'price' => 6.80,
             'allergens' => 'Frutos secos'
         ]);
@@ -47,7 +47,7 @@ class DishSeeder extends Seeder
             'description_short' => 'Tortitas de avena con frutas frescas y yogur griego.',
             'description_detail' => 'Nuestras Tortitas de Avena son una opción reconfortante y saludable. Acompañadas de frutas frescas y yogur griego, estas tortitas son la elección perfecta para aquellos que desean disfrutar de un desayuno dulce sin sacrificar la nutrición.',
             'photo' => 'https://t1.uc.ltmcdn.com/es/posts/0/7/6/como_hacer_tortitas_de_avena_y_platano_50670_orig.jpg',
-            'price' => 8,90,
+            'price' => 8.90,
             'allergens' => 'Gluten y trigo'
         ]);
 

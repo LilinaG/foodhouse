@@ -14,4 +14,11 @@ class ProductController extends Controller
         return view('welcome', compact('dishes'));
           
     }
+
+    public function show($id)
+
+    {
+        $dish = Dish::find($id);
+        return view('detailView', compact('dish'));
+    }
 }
